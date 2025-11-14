@@ -11,7 +11,7 @@ function ShoppingCart() {
   // State for the list of items in the cart
   const [items, setItems] = useState([]);
 
-  /// Input state for a new item being added
+  // Input state for a new item being added
   const [newItem, setNewItem] = useState({
     itemName: "",
     quantity: "",

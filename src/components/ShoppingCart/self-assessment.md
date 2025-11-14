@@ -1,6 +1,7 @@
 # Self-Assessment: ShoppingCart.jsx
   - Group member: Sailesh Karki
-
+  - Date : 14.11.2025
+  
 ## 1. Functionality
 - **Does the component meet the requirements?**
   - Handles all core features: Users can add items with fields for itemName, quantity, brand, subtotal, tax, and availability. Items display correctly and can be deleted.

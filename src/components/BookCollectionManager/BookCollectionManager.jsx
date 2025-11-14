@@ -37,7 +37,7 @@ function BookCollectionManager() {
 
   return (
     <div className="book-collection">
-      <h1>Book Collection Manager</h1>
+      <h1>📚 Book Collection Manager</h1>
       <div className="input-container">
         <input
           type="text"

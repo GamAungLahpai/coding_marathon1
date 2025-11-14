@@ -1,63 +1,121 @@
 .book-collection {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    padding: 20px;
-    background-color: #f4f4f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
   }
    
   .book-collection h1 {
     text-align: center;
-    color: #2d3e50;
+    color: #ffffff;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .input-container {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
   }
   
   .book-collection input {
-    padding: 10px;
-    margin: 10px;
-    width: 200px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
+    padding: 12px 15px;
+    margin: 0;
+    width: 250px;
+    border-radius: 6px;
+    border: 2px solid #e0e0e0;
+    font-size: 14px;
+    transition: all 0.3s ease;
+  }
+
+  .book-collection input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
   }
   
   .book-collection button {
-    padding: 10px 20px;
-    margin: 10px;
-    background-color: #4CAF50;
+    padding: 12px 24px;
+    margin: 0;
+    background-color: #667eea;
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
   }
   
   .book-collection button:hover {
-    background-color: #45a049;
+    background-color: #5568d3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
   }
   
   .book-collection ol {
-    padding-left: 20px;
+    padding-left: 0;
+    list-style: none;
+    counter-reset: book-counter;
+  }
+
+  .book-collection ol li {
+    counter-increment: book-counter;
+  }
+
+  .book-collection ol li::before {
+    content: counter(book-counter);
+    background-color: #667eea;
+    color: white;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 50%;
+    margin-right: 15px;
+    min-width: 30px;
+    text-align: center;
+    display: inline-block;
   }
   
   .book-collection li {
-    padding: 8px;
-    background-color: #fff;
-    margin: 5px 0;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px 20px;
+    background-color: #ffffff;
+    margin: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: all 0.3s ease;
+    font-size: 16px;
+  }
+
+  .book-collection li:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
   
   .book-collection li button {
     background-color: #e74c3c;
-    border-radius: 50%;
-    border: none;
-    color: white;
-    cursor: pointer;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
   }
   
   .book-collection li button:hover {
     background-color: #c0392b;
+    transform: translateY(-2px);
   }
-  

@@ -47,12 +47,13 @@ function BookCollectionManager() {
         />
         <input
           type="text"
-          placeholder="Author name (e.g., F. Scott Fitzgerald)"
+          placeholder="Author name (e.g., F. Scott Fitz)"
           value={author}
           onChange={handleAuthorChange}
         />
         <button onClick={addBook}>Add Book</button>
       </div>
+      <p className="book-count">Total Books: {books.length}</p>
       <ol>
         {books.map((book, index) => (
           <li key={index}>

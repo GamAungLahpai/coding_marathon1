@@ -1,3 +1,10 @@
 # Group 1
 ## Coding Marathon 1
-### Sandip, Sailesh, Dinal, Olga, Gam 
+
+## Members
+### Sandip Ranjit – SignUP
+### Dinal Maha Vidanelage – BookCollectionManger
+### Sailesh Karki – ShoppingCart
+### Twe He Gam Aung – ContactListManager 
+
+

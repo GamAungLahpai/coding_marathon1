@@ -2,7 +2,11 @@ import React, { useState } from "react";
 import "./BookCollectionManager.css"
 
 function BookCollectionManager() {
-  const [books, setBooks] = useState([]);
+  const [books, setBooks] = useState([
+    { title: "To Kill a Mockingbird", author: "Harper Lee" },
+    { title: "1984", author: "George Orwell" },
+    { title: "Pride and Prejudice", author: "Jane Austen" }
+  ]);
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
 

@@ -12,11 +12,11 @@ function SignUpPage() {
     const value = event.target.value;
     const name = event.target.name;
     
-    if (name === email) {
+    if (name === "email") {
       setEmail(value);
-    } else if(name === password) {
+    } else if(name === "password") {
       setPassword(value);
-    } else if (name === nationality) {
+    } else if (name === "nationality") {
       setNationality(value);
     }
     console.log(value)

@@ -38,16 +38,16 @@ function BookCollectionManager() {
   return (
     <div className="book-collection">
       <h1>Book Collection Manager</h1>
-      <div>
+      <div className="input-container">
         <input
           type="text"
-          placeholder="Enter book title..."
+          placeholder="Book title (e.g., The Great Gatsby)"
           value={title}
           onChange={handleTitleChange}
         />
         <input
           type="text"
-          placeholder="Enter author name..."
+          placeholder="Author name (e.g., F. Scott Fitzgerald)"
           value={author}
           onChange={handleAuthorChange}
         />

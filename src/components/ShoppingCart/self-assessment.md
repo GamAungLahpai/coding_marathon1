@@ -1,4 +1,5 @@
 # Self-Assessment: ShoppingCart.jsx
+  - Group member: Sailesh Karki
 
 ## 1. Functionality
 - **Does the component meet the requirements?**

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./SignUpPage.css";
 
 function SignUpPage() {
   const [email, setEmail] = useState("");
@@ -6,13 +7,20 @@ function SignUpPage() {
   const [nationality, setNationality] = useState("");
 
   const isEmailValid = email.includes("@") && email.includes(".");
-  const isPasswordStrong = password.length >= 8 && /[A-Z]/.test(password) && /\d/.test(password);
+  const getPasswordStrength = () => {
+    if (password.length < 6) return "Too weak";
+    if (password.length < 8) return "Weak";
+    if (password.length >= 8 && /[A-Z]/.test(password) && /\d/.test(password)) return "Strong";
+    return "Weak";
+  };
+
+  const strength = getPasswordStrength();
 
   const handleInputChange = (event) => {
     const map = {
       email: setEmail,
       password: setPassword,
-      nationality: setNationality
+      nationality: setNationality,
     };
 
     const value = event.target.value;
@@ -29,7 +37,7 @@ function SignUpPage() {
     en: "Hello",
     de: "Hallo",
     fr: "Bonjour",
-    jpn: "Konnichiwa"
+    jpn: "Konnichiwa",
   };
 
   return (
@@ -38,6 +46,7 @@ function SignUpPage() {
       <h4>Create a free account now</h4>
       <div>
         <label>Email</label>
+        <div className="input-container">
         <input
           type="text"
           name="email"
@@ -46,21 +55,40 @@ function SignUpPage() {
           onChange={handleInputChange}
           style={{ borderColor: isEmailValid ? "green" : "red" }}
         ></input>
-        {email && isEmailValid && <p>You typed a valid email</p>}
+        {email && <span className="icon">{isEmailValid ? "✅" : "❌"}</span>}
+        </div>
+        {email && (
+  <p className="message">
+    {isEmailValid ? "Email is valid" : "Email is invalid"}
+  </p>
+)}
 
         <label>Password</label>
+        <div className="input-container">
         <input
           type="password"
           placeholder="**********"
           name="password"
           value={password}
           onChange={handleInputChange}
-          style={{ borderColor: isPasswordStrong ? "green" : "red"}}
+          style={{ borderColor: 
+                      strength === "Strong" ? "green" :
+                      strength === "Weak" ? "orange" :
+                      "red"}}
         ></input>
-        {password && isPasswordStrong && <p>Your password is strong</p>}
+        {password && (
+          <span className="icon">
+            {strength === "Strong" ? "✅" : strength === "Weak" ? "⚠️" : "❌"}
+          </span>
+        )}
+        </div>
+
+        {password && (
+  <p className="message">{strength} password</p>
+)}
 
         <label>Nationality</label>
-        
+
         <select
           name="nationality"
           value={nationality}
@@ -78,10 +106,11 @@ function SignUpPage() {
         </select>
 
         <button>Sign up</button>
+        <hr />
 
         <p>{greetings[nationality]}</p>
         <p>Your email address is: {email}</p>
-        <p>Your email address is {isEmailValid}</p>
+        <p>Your email address is {isEmailValid ? "correct" : "incorrect"}</p>
       </div>
     </section>
   );

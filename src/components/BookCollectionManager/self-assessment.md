@@ -1,8 +1,8 @@
 # Self-Assessment: BookCollectionManager.jsx
 
-## Group 1
-## Name: Dinal Maha Vidanelage
-## Date: 14/11/2025
+**Group 1** 
+**Name:** Dinal Maha Vidanelage
+**Date:** 14/11/2025
 
 ---
 
